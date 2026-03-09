@@ -20,9 +20,8 @@ from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau
 from tensorflow.keras.optimizers import Adam
 import tensorflow.keras.backend as K
 
-# ----------------------------------------------------------
+
 # STEP 1: LOAD AND PREPROCESS
-# ----------------------------------------------------------
 
 FEATURE_COLS = ['terminal_voltage', 'terminal_current', 'temperature',
                 'charge_current', 'charge_voltage', 'time']
@@ -97,9 +96,8 @@ print(f"X_train shape: {X_train.shape} | X_test shape: {X_test.shape}")
 
 INPUT_SHAPE = (X_train.shape[1], X_train.shape[2])  # (300, 7)
 
-# ----------------------------------------------------------
+
 # STEP 2: DEFINE MODELS
-# ----------------------------------------------------------
 
 class AttentionLayer(Layer):
     # soft attention over BiLSTM timesteps
@@ -174,10 +172,7 @@ def build_cnn_bilstm_attention(input_shape):
 
     return Model(inp, out, name='CNN_BiLSTM_Attention')
 
-
-# ----------------------------------------------------------
 # STEP 3: TRAIN
-# ----------------------------------------------------------
 
 def train_model(model, X_train, y_train, epochs=100):
     model.compile(optimizer=Adam(learning_rate=0.001),
@@ -228,9 +223,8 @@ for build_fn in [build_lstm, build_cnn_lstm, build_cnn_bilstm_attention]:
     print(f"\n{model.name} | MAE: {mae:.4f} | RMSE: {rmse:.4f}")
 
 
-# ----------------------------------------------------------
+
 # STEP 4: RESULTS TABLE
-# ----------------------------------------------------------
 
 print("\n" + "="*50)
 print("RESULTS (tested on B0018)")
@@ -240,10 +234,7 @@ print("-"*50)
 for name, res in results.items():
     print(f"{name:<30} {res['mae']:>8.4f} {res['rmse']:>8.4f}")
 
-
-# ----------------------------------------------------------
 # STEP 5: PLOTS
-# ----------------------------------------------------------
 
 colors = {
     'Plain_LSTM':           'royalblue',
