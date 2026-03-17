@@ -41,7 +41,7 @@ def process_battery(mat_file, battery_name):
     final_df = pd.concat(all_data, ignore_index=True)
     output_path = f"Datasets/{battery_name}_discharge_soh.csv"
     final_df.to_csv(output_path, index=False)
-    print(f"✅ Saved {output_path} — {cycle_num} cycles, {len(final_df)} rows")
+    print(f"Saved {output_path} — {cycle_num} cycles, {len(final_df)} rows")
 
 process_battery("Datasets/B0005.mat", "B0005")
 process_battery("Datasets/B0006.mat", "B0006")
