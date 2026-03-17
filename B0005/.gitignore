@@ -29,17 +29,12 @@ Datasets/*.csv
 *.pkl
 *.joblib
 *.npy
-!B0005/*.npy
 saved_models/
 
 # plots (ignore all except key results)
 *.jpg
 *.pdf
-*.png
-!model1_results.png
-!model2_results.png
-!model3_results.png
-!model_comparison_final.png
+
 
 # IDE
 .antigravity/
