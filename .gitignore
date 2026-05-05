@@ -1,59 +1,42 @@
 # =============================================
-# DATASETS - B0__ageing
+# Ignore EVERYTHING by default
 # =============================================
-Nasa_Datasets/B0__ageing/*.csv
-Nasa_Datasets/B0__ageing/Original_csv/
+*
+
+# Allow folders to be traversed
+!*/
 
 # =============================================
-# DATASETS - Fast_charging
+# Allow .gitignore itself
 # =============================================
-Nasa_Datasets/Fast_charging/*.csv
-Nasa_Datasets/Fast_charging/*.xlsx
+!.gitignore
 
 # =============================================
-# CNN_LSTM files - All folders
+# B0__ageing - Allow ONLY CNN_Crossformer files
 # =============================================
-Nasa_Datasets/B0__ageing/CNN_LSTM*
-Nasa_Datasets/Fast_charging/CNN_LSTM*
+!B0__ageing/CNN_Crossformer.py
+!B0__ageing/CNN_Crossformer_LossCurve.png
+!B0__ageing/CNN_Crossformer_SoH_Prediction.png
+!B0__ageing/CNN_Crossformer_LossCurve.mat
+!B0__ageing/CNN_Crossformer_SoH_Prediction.mat
 
 # =============================================
-# Python
+# Fast_charging - Allow ONLY CNN_Crossformer files
 # =============================================
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-.Python
-*.egg-info/
-dist/
-build/
-.eggs/
-*.egg
+!Fast_charging/CNN_Crossformer.py
+!Fast_charging/CNN_Crossformer_LossCurve.png
+!Fast_charging/CNN_Crossformer_SoH_Prediction.png
+!Fast_charging/CNN_Crossformer_LossCurve.mat
+!Fast_charging/CNN_Crossformer_SoH_Prediction.mat
 
 # =============================================
-# Virtual Environment
+# Nasa_Datasets - Allow ONLY CNN_Crossformer files
 # =============================================
-venv/
-env/
-.venv/
-.env/
-
-# =============================================
-# Jupyter Notebook
-# =============================================
-.ipynb_checkpoints/
-*.ipynb
-
-# =============================================
-# VS Code
-# =============================================
-.vscode/
-*.code-workspace
-
-# =============================================
-# MAT files (if you don't want them on GitHub)
-# =============================================
-*.mat
+!Nasa_Datasets/CNN_Crossformer.py
+!Nasa_Datasets/CNN_Crossformer_SOH_prediction.png
+!Nasa_Datasets/CNN_Crossformer_training_loss.png
+!Nasa_Datasets/CNN_Crossformer_SOH_prediction.mat
+!Nasa_Datasets/CNN_Crossformer_training_loss.mat
 
 # =============================================
 # OS Files
